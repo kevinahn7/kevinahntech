@@ -1,0 +1,53 @@
+@import '../../scss/variables';
+
+.myName {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 50%;
+    color: black;
+}
+
+.navLinks {
+    display: grid;
+    grid-gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 110px;
+    a {
+        color: black;
+        text-align: center;
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: $custom-blue;
+            visibility: hidden;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: .25s linear;
+        }
+        &:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+    }
+    i {
+        margin-right: 5px;
+    }
+}
+
+.icons {
+    display: inline-block;
+}
+
+.pageLink {
+    margin: 10px auto;
+    width: 100%;
+    font-size: 1.3rem;
+}

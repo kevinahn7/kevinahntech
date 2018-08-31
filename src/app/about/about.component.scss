@@ -1,0 +1,32 @@
+.aboutHeader {
+    border-bottom: 1px lightgray solid;
+    padding-bottom: .5rem;
+    margin-top: 2rem;
+}
+
+.enjoyments {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.hobbies {
+    padding: 0;
+}
+
+.hobby {
+    list-style: none;
+}
+
+.aboutMain {
+    text-align: left;
+    max-width: 50%;
+    margin: 0 auto;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    p {
+        margin-bottom: 0;
+    }
+    .pageHeader {
+        text-align: center;
+    }
+}

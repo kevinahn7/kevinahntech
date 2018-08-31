@@ -1,0 +1,51 @@
+@import '../../scss/variables';
+
+.contactWays {
+    height: 70%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 10%;
+}
+
+.email {
+    a {
+        color: black;
+        text-align: center;
+        position: relative;
+        text-decoration: none;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            bottom: 0;
+            left: 0;
+            background-color: rgba($custom-blue, 0.3);
+            visibility: hidden;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: .25s linear;
+        }
+        &:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+    }
+    span {
+        visibility: hidden;
+    }
+}
+
+.socialIcon {
+    border-radius: 50%;
+    margin: 10px 5px 0 5px;
+    transition: .5s;
+    border-radius: 50%;
+    &:hover {
+        background-color: rgba($custom-blue, 0.3);
+        border-radius: 50%;
+    }
+}
