@@ -21,6 +21,7 @@
         color: black;
         text-align: center;
         position: relative;
+        transition: 0.4s;
         &:before {
             content: "";
             position: absolute;
@@ -32,7 +33,7 @@
             visibility: hidden;
             border-radius: 5px;
             transform: scaleX(0);
-            transition: .25s linear;
+            transition: 0.25s linear;
         }
         &:hover:before {
             visibility: visible;
@@ -57,8 +58,10 @@
 .currentPage {
     color: $custom-blue !important;
     font-weight: bold;
+    transition: 0.4s;
 }
 
+//Media Queries
 @media screen and (max-width: 1720px) {
     .myName {
         font-size: 1.6rem;

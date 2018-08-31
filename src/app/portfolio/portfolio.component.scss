@@ -1,5 +1,13 @@
 @import '../../scss/variables';
 
+main {
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
 .pageHeader {
     margin: 3rem auto 0 auto;
     padding-bottom: 1rem;
@@ -38,6 +46,7 @@ span {
     margin: auto;
 }
 
+//Media Queries
 @media screen and (max-width: 1300px) {
     .portfolioGrid {
         grid-template-columns: 1fr 1fr;

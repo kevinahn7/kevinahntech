@@ -4,6 +4,11 @@
     margin: 0 auto;
     line-height: 2rem;
     font-size: 1.2rem;
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s; /* Firefox < 16 */
+     -ms-animation: fadein 1s; /* Internet Explorer */
+      -o-animation: fadein 1s; /* Opera < 12.1 */
+         animation: fadein 1s;
     p {
         margin: 0;
     }
@@ -50,6 +55,7 @@ ul {
     list-style: none;
 }
 
+//Media Queries
 @media screen and (max-width: 1300px) {
     .aboutMain {
         max-width: 65%;
