@@ -8,6 +8,11 @@ import { ContactComponent } from './contact/contact.component';
 const appRoutes: Routes = [
     {
         path:'',
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
+    {
+        path:'home',
         component: IndexComponent
     },
     {

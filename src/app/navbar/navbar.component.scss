@@ -6,6 +6,7 @@
     padding: 10px;
     margin-bottom: 50%;
     color: black;
+    font-size: 2rem;
 }
 
 .navLinks {
@@ -15,6 +16,7 @@
     padding: 0;
     margin: 0 auto;
     width: 110px;
+    line-height: 1.5;
     a {
         color: black;
         text-align: center;
@@ -50,4 +52,65 @@
     margin: 10px auto;
     width: 100%;
     font-size: 1.3rem;
+}
+
+.currentPage {
+    color: $custom-blue !important;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1720px) {
+    .myName {
+        font-size: 1.6rem;
+    }
+
+    .pageLink {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .myName {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .myName {
+        font-size: 1.7rem;
+        padding: 5%;
+    }
+
+    .pageLink {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .myName {
+        font-size: 2.5rem;
+        margin: 1rem auto;
+    }
+
+    .navLinks {
+        width: 130px;
+    }
+
+    .pageLink {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .myName {
+        font-size: 1.7rem;
+    }
+
+    .pageLink {
+        font-size: 1rem;
+    }
+
+    .navLinks {
+        width: 90px;
+    }
 }

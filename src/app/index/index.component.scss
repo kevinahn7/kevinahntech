@@ -5,6 +5,12 @@
 
 .myself {
     margin-top: 2rem;
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+
+h3 {
+    font-size: 1.75rem;
 }
 
 .mySkills {
@@ -15,4 +21,22 @@
 .skills {
     font-size: 1.3rem;
     margin: 20px;
+}
+
+@media screen and (max-width: 540px) {
+    .me {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .mySkills {
+        margin-top: 3rem;
+    }
+
+    .skills {
+        font-size: 1.3rem;
+        margin: 10px;
+        display: block;
+    }
 }

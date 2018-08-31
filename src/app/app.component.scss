@@ -40,59 +40,19 @@ footer {
     height: 50px;
 }
 
-@media(max-width: 1720px) {
-    .myName {
-        font-size: 1.6rem;
-    }
-
-    .pageLink {
-        font-size: 1.2rem;
-    }
-}
-
-@media(max-width: 1450px) {
-    .myName {
-        font-size: 1.4rem;
-    }
-}
-
-@media(max-width: 1300px) {
-    .portfolioGrid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .aboutMain {
-        max-width: 65%;
-    }
-
+@media screen and (max-width: 1300px) {
     .content {
         grid-template-columns: 15% 85%;
     }
-    
-    .myName {
-        font-size: 1.7rem;
-        padding: 5%;
-    }
-
-    .pageLink {
-        font-size: 1.2rem;
-    }
 }
 
-@media(max-width: 940px) {
-    .portfolioGrid {
-        grid-template-columns: 1fr;
-    }
-
+@media screen and (max-width: 940px) {
     footer {
         height: 30px;
-        * {
-            font-size: 13px;
-        }
     }
 }
 
-@media(max-width: 750px) {
+@media screen and (max-width: 750px) {
     .content {
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -105,86 +65,10 @@ footer {
         border-right: none;
         padding-bottom: 2rem;
     }
-    
-    .myName {
-        font-size: 2.5rem;
-        margin: 1rem auto;
-    }
-
-    .navLinks {
-        width: 130px;
-    }
-
-    .pageLink {
-        font-size: 1.5rem;
-    }
 }
 
-@media(max-width: 540px) {
-    .me {
-        width: 75%;
-    }
-
-    .aboutMain {
-        max-width: 80%;
-        font-size: 1rem;
-        h4 {
-            font-size: 1rem;
-            font-weight: bold;
-        }
-        h6 {
-            font-size: 1rem;
-        }
-    }
-
-    .pageHeader {
-        font-size: 1.7rem;
-    }
-
-    .aboutHeader {
-        font-size: 1.4rem;
-    }
-
-    .enjoyments {
-        font-size: 1.2rem;
-    }
-}
-
-@media(max-width: 400px) {
-    .myName {
-        font-size: 1.7rem;
-    }
-
-    .pageLink {
-        font-size: 1rem;
-    }
-
-    .navLinks {
-        width: 90px;
-    }
-
+@media screen and (max-width: 400px) {
     footer {
         height: 25px;
-        * {
-            font-size: 10px;
-        }
-    }
-
-    .portfolioGrid {
-        .project {
-            img {
-                width: 200px;
-            }
-        }
-    }
-
-    .mySkills {
-        margin-top: 3rem;
-    }
-
-    .skills {
-        font-size: 1.3rem;
-        margin: 10px;
-        display: block;
     }
 }
