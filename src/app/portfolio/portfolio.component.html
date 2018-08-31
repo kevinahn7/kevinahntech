@@ -1,7 +1,7 @@
 <main>
     <h1 class="pageHeader">Portfolio</h1>
     <div class="portfolioGrid">
-        <div class="project"><a href="https://kevinahn7.github.io/beat-maker/" target="_blank"><img src="assets/beat-maker.PNG"></a><h3>Beat Maker</h3><p>HTML, CSS, JS</p></div>
+        <div *ngFor="let project of projects"><a href={{project.url}} target="_blank"><img src={{project.image}}></a><h3>{{project.name}}</h3><p><span *ngFor="let skill of getSkills(project)">{{skill}}</span></p><p>{{project.description}}</p></div>
         <div class="moreToCome">More to come!</div>
     </div>
 </main>

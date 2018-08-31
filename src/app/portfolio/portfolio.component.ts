@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Projects } from '../models/projects.model';
 
 @Component({
   selector: 'app-portfolio',
@@ -12,4 +13,10 @@ export class PortfolioComponent implements OnInit {
   ngOnInit() {
   }
 
+  projects: object[] = Projects;
+
+
+  getSkills(project) {
+    return project.skills;
+  }
 }
