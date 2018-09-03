@@ -41,11 +41,6 @@ span {
     margin: 0 5px;
 }
 
-.moreToCome {
-    text-align: center;
-    margin: auto;
-}
-
 //Media Queries
 @media screen and (max-width: 1300px) {
     .portfolioGrid {
@@ -70,6 +65,10 @@ span {
         .project {
             img {
                 width: 200px;
+            }
+            span {
+                font-size: 12px;
+                margin: 0 3px;
             }
         }
     }
