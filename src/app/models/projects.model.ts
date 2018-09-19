@@ -7,6 +7,13 @@ export let Projects: object[] = [
         description: "An app to play 'Who's That Pokémon', based on the Pokémon show bumper"
     },
     {
+        name: "What's On Tap",
+        url: "http://whats-on-tap-app.herokuapp.com/",
+        image: "assets/whats-on-tap.PNG",
+        skills: ["C#", "Entity", ".NET", "MySQL"],
+        description: "An app to store and display the local bars and the beers on tap in the local Portland area"
+    },
+    {
         name: "Beat Maker",
         url: "https://kevinahn7.github.io/beat-maker/",
         image: "assets/beat-maker.PNG",
