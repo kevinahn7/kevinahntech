@@ -9,6 +9,13 @@ main {
 .me {
     border-radius: 50%;
     margin-top: 5rem;
+    transition: 0.5s;
+    &:hover {
+        transform: scale(1.07) rotate(7deg);
+    }
+    &:active {
+        transform: scale(1.15) rotate(0deg);
+    }
 }
 
 .myself {
