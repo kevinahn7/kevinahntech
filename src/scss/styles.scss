@@ -1,3 +1,5 @@
+@import 'variables';
+
 * {
     text-decoration: none;
     box-sizing: border-box;
@@ -15,6 +17,21 @@ body {
     height: 100%;
     margin: 0;
     line-height: 1.5;
+}
+
+html::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar-thumb
+{
+	background-color: $custom-blue;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%,
+	                   color-stop(.5, rgba(255, 255, 255, .2)),
+					   color-stop(.5, transparent), to(transparent));
 }
 
 img {
