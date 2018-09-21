@@ -10,7 +10,7 @@ export let Projects: object[] = [
         name: "What's On Tap",
         url: "http://whats-on-tap-app.herokuapp.com/",
         image: "assets/whats-on-tap.PNG",
-        skills: ["C#", "Entity", ".NET", "MySQL"],
+        skills: ["C#", "Entity", ".NET", "MySQL", "Google Maps API"],
         description: "An app to store and display the local bars and the beers on tap in the local Portland area"
     },
     {

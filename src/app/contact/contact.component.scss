@@ -1,5 +1,4 @@
 @import '../../scss/variables';
-
 main {
     height: 100%;
     -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -7,62 +6,52 @@ main {
      -ms-animation: fadein 1s; /* Internet Explorer */
       -o-animation: fadein 1s; /* Opera < 12.1 */
          animation: fadein 1s;
-    .pageHeader {
-        margin: 3rem auto 0 auto;
-        padding-bottom: 1rem;
-        font-size: 2.5rem;
-    }
-    .contactWays {
-        height: 70%;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        flex-direction: column;
-        padding-bottom: 10%;
-        p {
-            margin-top: 0;
+}
+.contactWays {
+    height: 70%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 10%;
+}
+.pageHeader {
+    margin: 3rem auto 0 auto;
+    padding-bottom: 1rem;
+    font-size: 2.5rem;
+}
+p {
+    margin-top: 0;
+}
+.email {
+    a {
+        color: black;
+        text-align: center;
+        position: relative;
+        text-decoration: none;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            bottom: 0;
+            left: 0;
+            background-color: rgba($custom-blue, 0.3);
+            visibility: hidden;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: .25s linear;
         }
-        .email {
-            a {
-                color: black;
-                text-align: center;
-                position: relative;
-                text-decoration: none;
-                &:before {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    z-index: -1;
-                    bottom: 0;
-                    left: 0;
-                    background-color: rgba($custom-blue, 0.3);
-                    visibility: hidden;
-                    border-radius: 5px;
-                    transform: scaleX(0);
-                    transition: .25s linear;
-                }
-                &:hover:before {
-                    visibility: visible;
-                    transform: scaleX(1);
-                }
-            }
-            span {
-                visibility: hidden;
-            }
+        &:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
         }
     }
-    .plane {
-        width: 200px;
-        position: absolute;
-        margin-top:90px;
-        z-index: -1;
-        -moz-animation: planeTransition 7s infinite;
-        -webkit-animation:planeTransition 7s infinite;
-        animation: planeTransition 7s infinite;
+    span {
+        visibility: hidden;
     }
 }
-
 .socialIcon {
     border-radius: 50%;
     margin: 10px;
@@ -74,7 +63,15 @@ main {
         border-radius: 50%;
     }
 }
-
+.plane {
+    width: 200px;
+    position: absolute;
+    margin-top:90px;
+    z-index: -1;
+    -moz-animation: planeTransition 7s infinite;
+    -webkit-animation:planeTransition 7s infinite;
+    animation: planeTransition 7s infinite;
+}
 @-moz-keyframes planeTransition {
     from {
         margin-left: -73%;
