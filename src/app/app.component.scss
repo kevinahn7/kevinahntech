@@ -13,9 +13,11 @@
 nav {
     grid-area: nav;
     position: fixed;
+    background-color: white;
     width: 10%;
     height: 100%;
     border-right: rgba(173, 173, 173, .7) 1px solid;
+    z-index: 1;
     a {
         &:hover {
             text-decoration: none;
@@ -31,6 +33,7 @@ main {
 
 footer {
     background-color: #efefef;
+    z-index: 2;
     position: fixed;
     bottom: 0;
     right: 0;

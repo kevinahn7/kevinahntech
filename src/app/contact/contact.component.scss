@@ -1,5 +1,4 @@
 @import '../../scss/variables';
-
 main {
     height: 100%;
     -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -8,7 +7,6 @@ main {
       -o-animation: fadein 1s; /* Opera < 12.1 */
          animation: fadein 1s;
 }
-
 .contactWays {
     height: 70%;
     display: flex;
@@ -17,17 +15,14 @@ main {
     flex-direction: column;
     padding-bottom: 10%;
 }
-
 .pageHeader {
     margin: 3rem auto 0 auto;
     padding-bottom: 1rem;
     font-size: 2.5rem;
 }
-
 p {
     margin-top: 0;
 }
-
 .email {
     a {
         color: black;
@@ -57,7 +52,6 @@ p {
         visibility: hidden;
     }
 }
-
 .socialIcon {
     border-radius: 50%;
     margin: 10px;
@@ -68,8 +62,84 @@ p {
         border-radius: 50%;
     }
 }
-
+.plane {
+    width: 200px;
+    position: absolute;
+    margin-top:90px;
+    z-index: -1;
+    -moz-animation: planeTransition 7s infinite;
+    -webkit-animation:planeTransition 7s infinite;
+    animation: planeTransition 7s infinite;
+}
+@-moz-keyframes planeTransition {
+    from {
+        margin-left: -73%;
+        margin-top: -20%;
+    }
+    to {
+        margin-left: 53%;
+        margin-top: -40%;
+    }
+}
+@-webkit-keyframes planeTransition {
+    from {
+        margin-left: -73%;
+        margin-top: -20%;
+    }
+    to {
+        margin-left: 53%;
+        margin-top: -40%;
+    }
+}
+@keyframes planeTransition {
+    from {
+        margin-left: -73%;
+        margin-top: -20%;
+    }
+    to {
+        margin-left: 53%;
+        margin-top: -40%;
+    }
+}
 //Media Queries
+@media screen and (max-width: 750px) {
+    .plane {
+        width: 150px;
+        -moz-animation: planeTransition 5s infinite;
+        -webkit-animation:planeTransition 5s infinite;
+        animation: planeTransition 5s infinite;
+    }
+    @-moz-keyframes planeTransition {
+        from {
+            margin-left: -100%;
+            margin-top: -40%;
+        }
+        to {
+            margin-left: 60%;
+            margin-top: -60%;
+        }
+    }
+    @-webkit-keyframes planeTransition {
+        from {
+            margin-left: -100%;
+            margin-top: -40%;
+        }
+        to {
+            margin-left: 60%;
+            margin-top: -60%;
+        }
+    }
+    @keyframes planeTransition {
+        from {
+            margin-left: -100%;
+            margin-top: -40%;
+        }
+        to {
+            margin-left: 60%;
+            margin-top: -60%;
+        }
+    }
+}
 @media screen and (max-width: 540px) {
     .pageHeader {
         font-size: 1.7rem;
