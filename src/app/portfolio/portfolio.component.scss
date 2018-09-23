@@ -11,6 +11,12 @@ main {
         padding-bottom: 1rem;
         font-size: 2.5rem;
     }
+    .dropdown {
+        width: 50%;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
 }
 
 .portfolioGrid {
@@ -48,9 +54,15 @@ span {
 }
 
 @media screen and (max-width: 940px) {
-    .portfolioGrid {
-        grid-template-columns: 1fr;
+    main {
+        .dropdown {
+            width: 80%;
+        }
+        .portfolioGrid {
+            grid-template-columns: 1fr;
+        }
     }
+
 }
 
 @media screen and (max-width: 540px) {
