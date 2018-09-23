@@ -5,6 +5,8 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { routing } from './app.routing';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
@@ -14,6 +16,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SkillPipe } from './skill.pipe';
+import { AdminComponent } from './admin/admin.component';
 
 
 export const firebaseConfig = {
@@ -32,14 +35,17 @@ export const firebaseConfig = {
     PortfolioComponent,
     NavbarComponent,
     FooterComponent,
-    SkillPipe
+    SkillPipe,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

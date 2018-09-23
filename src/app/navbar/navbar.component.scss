@@ -9,6 +9,10 @@
     font-size: 2rem;
 }
 
+a {
+    text-decoration: none;
+}
+
 .navLinks {
     display: grid;
     grid-gap: 10px;
@@ -22,7 +26,6 @@
         text-align: center;
         position: relative;
         transition: 0.4s;
-        text-decoration: none;
         &:before {
             content: "";
             position: absolute;
