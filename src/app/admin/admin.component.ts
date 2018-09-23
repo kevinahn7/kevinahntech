@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from './../models/project.model';
 import { AdminService } from './../services/admin.service';
 import { PortfolioService } from './../services/portfolio.service';
-import * as firebase from 'firebase';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
@@ -42,6 +41,7 @@ export class AdminComponent implements OnInit {
 
   toggleEditForm() {
     this.hideAllForms();
+    this.selectedProject = null;
     this.showEditForm = !this.showEditForm;
   }
 

@@ -1,117 +1,88 @@
 <div *ngIf="!loggedIn">
   <h1>Login</h1>
-  <label for="email">Email:</label>
-  <input #email type="text" required="true">
-  <label for="password">Password:</label>
-  <input #password type="password" required="true">
-  <button (click)="login(email.value, password.value); email.value=''; password.value='';">Login</button>
+  <form (submit)="login(email.value, password.value); email.value=''; password.value='';">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input #email type="text" id="email" required="true" placeholder="Enter email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input #password type="password" required="true" class="form-control" id="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary formButton">Submit</button>
+  </form>
 </div>
 
-
-
-
 <div *ngIf="loggedIn">
-
-    <h1 class="content-title">Admin</h1>
-    <div class="container-block">
-      <div class="admin-panel-box">
-        <ul class="admin-panel-nav">
-          <li>
-            <button class="btn btn-lg btn-success" (click)="toggleAddForm()">
-              Add Project
-            </button>
-          </li>
-          <li>
-            <button class="btn btn-lg btn-warning" (click)="toggleEditForm()">
-              Edit Projects
-            </button>
-          </li>
-          <li>
-            <button class="btn btn-lg btn-danger" (click)="toggleDeleteForm()">
-              Delete Projects
-            </button>
-          </li>
-          <li>
-            <button class="btn btn-lg btn-primary" (click)="runLogout()">
-              Logout
-            </button>
-          </li>
-        </ul>
+  <h1 class="content-title">Admin</h1>
+  <div class="choices">
+    <button class="btn btn-lg btn-success" (click)="toggleAddForm()">Add Project</button>
+    <button class="btn btn-lg btn-warning" (click)="toggleEditForm()">Edit Projects</button>
+    <button class="btn btn-lg btn-danger" (click)="toggleDeleteForm()">Delete Projects</button>
+    <button class="btn btn-lg btn-primary" (click)="logout()">Logout</button>
+  </div>
+  
+  <!-- add project -->
+  <div *ngIf="showAddForm">
+    <h4>Add Project</h4>
+    <form (ngSubmit)="createProject(name.value, url.value, image.value, skills.value.split(','), description.value);">
+      <div class="form-group">
+        <label for="imgUrl">Name:</label>
+        <input #name class="form-control" autofocus="true" required>
       </div>
-      <!-- add project form -->
-      <div class="content-block fast-fade-in" *ngIf="showAddForm">
-        <h4>Add Project</h4>
-        <form (ngSubmit)="createProject(name.value, url.value, image.value, skills.value.split(','), description.value);">
-          <div class="form-group">
-            <label for="imgUrl">Name:</label>
-            <input #name class="form-control" autofocus="true" required>
-          </div>
-          <div class="form-group">
-            <label for="imgAltTag">Site url:</label>
-            <input #url class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="name">image url:</label>
-            <input #image class="form-control" required>
-          </div>
-          <div class="form-group">
-              <label for="skills">Skills (seperated by comma, no space):</label>
-              <input #skills class="form-control" required>
-            </div>
-          <div class="form-group">
-            <label for="desc">Description:</label>
-            <input #description class="form-control">
-          </div>
-          <button type="submit" class="btn btn-lg btn-success">Add</button>
-        </form>
+      <div class="form-group">
+        <label for="imgAltTag">Site url:</label>
+        <input #url class="form-control" required>
       </div>
-      <!-- edit project form -->
-      <div class="content-block fast-fade-in" *ngIf="showEditForm">
-        <h4>Edit Projects</h4>
-        <ul class="project-list" *ngFor="let project of projects | async">
-          <li>
-            {{project.name}}
-            <button class="btn btn-med btn-default btn-warning project-btn-left-margin" (click)="editProject(project)">
-              Edit
-            </button>
-          </li>
-        </ul>
-        <div *ngIf="selectedProject">
-          
-          <label for="name">Name:</label>
-          <input [(ngModel)]="selectedProject.name" class="form-control" id="name" autofocus="true">
-        
-          <label for="url">Site Url:</label>
-          <input [(ngModel)]="selectedProject.url" class="form-control" id="url">
-        
-          <label for="image">Image Url:</label>
-          <input [(ngModel)]="selectedProject.image" class="form-control" id="image">
-
-          <label for="skills">Skills (seperated by comma and no space):</label>
-          <input [(ngModel)]="selectedProject.skills" class="form-control" id="skills">
-        
-          <label for="description">Description:</label>
-          <input [(ngModel)]="selectedProject.description" class="form-control" id="description">
-        
-          <button class="btn btn-lg btn-success" (click)="updateProject(selectedProject)">
-            Update
-          </button>
-          <button class="btn btn-lg btn-danger" (click)="cancelEdit()">
-            Cancel
-          </button>
+      <div class="form-group">
+        <label for="name">image url:</label>
+        <input #image class="form-control" required>
+      </div>
+      <div class="form-group">
+          <label for="skills">Skills (seperated by comma, no space):</label>
+          <input #skills class="form-control" required>
         </div>
+      <div class="form-group">
+        <label for="desc">Description:</label>
+        <input #description class="form-control">
       </div>
-      <!-- delete project form -->
-      <div *ngIf="showDeleteForm">
-        <h4>Delete Projects</h4>
-        <ul *ngFor="let project of projects | async">
-          <li>
-            {{project.name}}
-            <button (click)="deleteProject(project)">
-              Delete
-            </button>
-          </li>
-        </ul>
-      </div>
+      <button type="submit" class="btn btn-lg btn-success formButton">Add</button>
+    </form>
+  </div>
+
+  <!-- edit project -->
+  <div *ngIf="showEditForm">
+    <h4>Edit Projects</h4>
+    <ul class="project-list" *ngFor="let project of projects | async">
+      <li>
+        {{project.name}}
+        <button class="btn btn-warning" (click)="editProject(project)">Edit</button>
+      </li>
+    </ul>
+    <div *ngIf="selectedProject" class="editForm">
+      <label for="name">Name:</label>
+      <input [(ngModel)]="selectedProject.name" class="form-control" id="name" autofocus="true">
+      <label for="url">Site Url:</label>
+      <input [(ngModel)]="selectedProject.url" class="form-control" id="url">
+      <label for="image">Image Url:</label>
+      <input [(ngModel)]="selectedProject.image" class="form-control" id="image">
+      <label for="skills">Skills (seperated by comma and no space):</label>
+      <input [(ngModel)]="selectedProject.skills" class="form-control" id="skills">
+      <label for="description">Description:</label>
+      <input [(ngModel)]="selectedProject.description" class="form-control" id="description">
+      <button class="btn btn-lg btn-success formButton" (click)="updateProject(selectedProject)">Update</button>
+      <button class="btn btn-lg btn-danger formButton" (click)="cancelEdit()">Cancel</button>
     </div>
+  </div>
+
+  <!-- delete project -->
+  <div *ngIf="showDeleteForm">
+    <h4>Delete Projects</h4>
+    <ul *ngFor="let project of projects | async">
+      <li>
+        {{project.name}}
+        <button class="btn btn-danger" (click)="deleteProject(project)">Delete</button>
+      </li>
+    </ul>
+  </div>
 </div>
