@@ -10,6 +10,7 @@ import { PortfolioService } from '../services/portfolio.service';
 })
 export class PortfolioComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
+  selectedSkill: string = "all";
 
   constructor(private portfolioService: PortfolioService) { }
 
@@ -19,5 +20,9 @@ export class PortfolioComponent implements OnInit {
 
   getSkills(project) {
     return project.skills;
+  }
+
+  onChange(selectedSkill) {
+    this.selectedSkill = selectedSkill;
   }
 }
