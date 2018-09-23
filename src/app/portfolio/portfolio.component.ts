@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Projects } from '../models/projects.model';
+import { FirebaseListObservable } from 'angularfire2/database';
+import { PortfolioService } from '../services/portfolio.service';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.scss']
+  styleUrls: ['./portfolio.component.scss'],
+  providers: [PortfolioService]
 })
 export class PortfolioComponent implements OnInit {
+  projects: FirebaseListObservable<any[]>;
 
-  constructor() { }
+  constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit() {
+    this.projects = this.portfolioService.getProjects();
   }
-
-  projects: object[] = Projects;
-
 
   getSkills(project) {
     return project.skills;
