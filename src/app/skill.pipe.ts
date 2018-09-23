@@ -9,13 +9,15 @@ import { Project } from './models/project.model';
 export class SkillPipe implements PipeTransform {
     transform(input: Project[], selectedSkill: string) {
         let filteredProjects: Project[] = [];
-        input.forEach((project) => {
-            if (project.skills.includes(selectedSkill) || selectedSkill === "all") {
-                filteredProjects.push(project)
-            } else {
-                return;
-            }
-        })
+        if (input) {
+            input.forEach((project) => {
+                if (project.skills.includes(selectedSkill) || selectedSkill === "all") {
+                    filteredProjects.push(project)
+                } else {
+                    return;
+                }
+            })
+        }
         return filteredProjects;
     }
 }
