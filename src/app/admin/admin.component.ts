@@ -64,6 +64,12 @@ export class AdminComponent implements OnInit {
     this.selectedProject = null;
   }
 
+  createProject(name: string, url: string, image: string, skills: string[], description: string) {
+    const newProject: Project = new Project(name, url, image, skills, description);
+    this.portfolioService.addProject(newProject);
+    this.hideAllForms();
+  }
+
   updateProject(projectToUpdate) {
     this.portfolioService.updateProject(projectToUpdate);
     this.cancelEdit();

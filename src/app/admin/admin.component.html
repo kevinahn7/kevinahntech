@@ -41,7 +41,7 @@
       <!-- add project form -->
       <div class="content-block fast-fade-in" *ngIf="showAddForm">
         <h4>Add Project</h4>
-        <form (ngSubmit)="submitForm(name.value, url.value, image.value, skills.value.split(','), description.value);">
+        <form (ngSubmit)="createProject(name.value, url.value, image.value, skills.value.split(','), description.value);">
           <div class="form-group">
             <label for="imgUrl">Name:</label>
             <input #name class="form-control" autofocus="true" required>
@@ -55,16 +55,14 @@
             <input #image class="form-control" required>
           </div>
           <div class="form-group">
-              <label for="githubLink">Skills (seperated by comma, no space):</label>
+              <label for="skills">Skills (seperated by comma, no space):</label>
               <input #skills class="form-control" required>
             </div>
           <div class="form-group">
             <label for="desc">Description:</label>
             <input #description class="form-control">
           </div>
-          <button type="submit" class="btn btn-lg btn-success">
-            Add
-          </button>
+          <button type="submit" class="btn btn-lg btn-success">Add</button>
         </form>
       </div>
       <!-- edit project form -->
@@ -116,10 +114,4 @@
         </ul>
       </div>
     </div>
-
-
-
-  <button (click)="logout()">
-    Logout
-  </button>
 </div>
