@@ -141,8 +141,8 @@ p {
         }
     }
 }
-@media screen and (max-width: 540px) {
-    .pageHeader {
-        font-size: 1.7rem;
+@media screen and (max-width: 500px) {
+    span {
+        display: block;
     }
 }
