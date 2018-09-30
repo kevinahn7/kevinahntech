@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { PortfolioService } from '../services/portfolio.service';
+import { trigger, transition, useAnimation } from '@angular/animations';
+import { fadeInDown } from 'ng-animate';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
-  providers: [PortfolioService]
+  providers: [PortfolioService],
+  animations: [
+    trigger('fadeInDown', [transition('void => *', useAnimation(fadeInDown))])
+  ]
 })
 export class PortfolioComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;

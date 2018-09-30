@@ -1,5 +1,5 @@
 <main>
-    <h1 class="pageHeader">Portfolio</h1>
+    <h1 class="pageHeader" [@fadeInDown]="fadeInDown">Portfolio</h1>
     <select (change)="onChange($event.target.value)" class="form-control dropdown">
         <option value="all" selected="selected">All</option>
         <option value="HTML">HTML/CSS</option>

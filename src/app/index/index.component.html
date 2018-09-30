@@ -1,20 +1,20 @@
 <main>
     <img src="../assets/me.jpg" class="me" alt="A picture of me">
-    <h2 class="myself">Kevin Ahn</h2>
-    <h3>Software Programmer</h3>
-    <div class="mySkills">
-        <span class="skills">JavaScript</span>
-        <span class="skills">HTML</span>
-        <span class="skills">CSS</span>
-        <span class="skills">Sass</span>
-        <span class="skills">Git</span>
-        <span class="skills">BootStrap</span>
-        <span class="skills">C#</span>
-        <span class="skills">.NET</span>
-        <span class="skills">jQuery</span>
-        <span class="skills">Angular</span>
-        <span class="skills">React</span>
-        <span class="skills">Entity</span>
-        <span class="skills">SQL</span>
+    <h2 class="myself" [@fadeInDown]="fadeInDown">Kevin Ahn</h2>
+    <h3 [@fadeInDown]="fadeInDown">Software Programmer</h3>
+    <div [@fadeInUp]="fadeInUp" class="mySkills">
+        <span (mouseover)="animate('pulse0')" [@pulse0]="pulse0" class="skills">JavaScript</span>
+        <span (mouseover)="animate('pulse1')" [@pulse1]="pulse1" class="skills">HTML</span>
+        <span (mouseover)="animate('pulse2')" [@pulse2]="pulse2" class="skills">CSS</span>
+        <span (mouseover)="animate('pulse3')" [@pulse3]="pulse3" class="skills">Sass</span>
+        <span (mouseover)="animate('pulse4')" [@pulse4]="pulse4" class="skills">Git</span>
+        <span (mouseover)="animate('pulse5')" [@pulse5]="pulse5" class="skills">BootStrap</span>
+        <span (mouseover)="animate('pulse6')" [@pulse6]="pulse6" class="skills">C#</span>
+        <span (mouseover)="animate('pulse7')" [@pulse7]="pulse7" class="skills">.NET</span>
+        <span (mouseover)="animate('pulse8')" [@pulse8]="pulse8" class="skills">jQuery</span>
+        <span (mouseover)="animate('pulse9')" [@pulse9]="pulse9" class="skills">Angular</span>
+        <span (mouseover)="animate('pulse10')" [@pulse10]="pulse10" class="skills">React</span>
+        <span (mouseover)="animate('pulse11')" [@pulse11]="pulse11" class="skills">Entity</span>
+        <span (mouseover)="animate('pulse12')" [@pulse12]="pulse12" class="skills">SQL</span>
     </div>
 </main>
