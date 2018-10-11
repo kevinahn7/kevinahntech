@@ -6,6 +6,8 @@
         <option value="JavaScript">JavaScript</option>
         <option value="Angular">Angular</option>
         <option value="C#">C#/.NET</option>
+        <option value="React">React</option>
+        <option value="Redux">Redux</option>
     </select>
     <div class="portfolioGrid">
         <div *ngFor="let project of projects | async | skillFilter: selectedSkill" class="project">
