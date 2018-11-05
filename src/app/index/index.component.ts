@@ -21,7 +21,10 @@ import { fadeInDown, fadeInUp, pulse } from 'ng-animate';
     trigger('pulse9', [transition('* => *', useAnimation(pulse))]),
     trigger('pulse10', [transition('* => *', useAnimation(pulse))]),
     trigger('pulse11', [transition('* => *', useAnimation(pulse))]),
-    trigger('pulse12', [transition('* => *', useAnimation(pulse))])
+    trigger('pulse12', [transition('* => *', useAnimation(pulse))]),
+    trigger('pulse13', [transition('* => *', useAnimation(pulse))]),
+    trigger('pulse14', [transition('* => *', useAnimation(pulse))]),
+    trigger('pulse15', [transition('* => *', useAnimation(pulse))])
   ]
 })
 export class IndexComponent implements OnInit {
